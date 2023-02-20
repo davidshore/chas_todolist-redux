@@ -1,4 +1,4 @@
-# Skapa en Todolist
+# Skapa en Todolist med Redux
 
 I dagens uppgift ska vi öva på global state med Redux och hooks-for-redux.
 
