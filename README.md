@@ -1,54 +1,55 @@
-# Skapa en Todolist
+# Create a Todo List with Redux Toolkit and Next.js
 
-I dagens uppgift ska vi öva på global state med Redux och hooks-for-redux.
+In this assignment, we will practice managing global state using Redux Toolkit within a Next.js application.
 
-### Sätt upp projektet
+### Setting Up the Project
 
-1. Öppna en terminal och gå med `cd` där du vill skapa projektet.
-2. Skriv `npm create vite@latest todolist-redux -- --template react`.
-3. Gå in i projektet: `cd todolist-redux`.
-4. Installera dependencies: `npm install`.
-5. Installera hooks-for-redux (H4R) `npm install hooks-for-redux`
+1. Open a terminal and navigate (`cd`) to the directory where you want to create the project.
+2. Create a new Next.js project: `npx create-next-app@latest todolist-redux-toolkit`.
+3. Change into the project directory: `cd todolist-redux-toolkit`.
+4. Install Redux Toolkit and React-Redux: `npm install @reduxjs/toolkit react-redux`.
 
-## Hur du klarar uppgiften
+## Completing the Assignment
 
-Utgå från koden i den tidigare todolist-uppgiften. Ta bort alla `useState` och tillhörande funktioner och skapa istället en modul för todo-listan med funktionen `createReduxModule`. Läs från modulen med hjälp av hooks och
-uppdatera modulen med hjälp av action-funktioner.
+Start with the code from the previous todo list assignment. Remove all `useState` and associated functions. Instead, create a slice for the todo list using Redux Toolkit's `createSlice`. Access the state using hooks from `react-redux`, and update the state using the slice's action creators.
 
-Glöm inte att lägga en Provider runt din App-tag i `main.jsx`. Så här:
+Remember to wrap your application with a `Provider` in `_app.js` like this:
 
+```jsx
+import { Provider } from "react-redux";
+import store from "../store"; // Adjust the path according to your file structure
+
+function MyApp({ Component, pageProps }) {
+  return (
+    <Provider store={store}>
+      <Component {...pageProps} />
+    </Provider>
+  );
+}
+
+export default MyApp;
 ```
-<Provider>
-  <App />
-</Provider>
-```
 
-## Hur du lämnar in
+### How to Submit
 
-1. Skapa ett repo på github.
-2. Ladd up dina filer till github:
+1. Create a repository on GitHub.
+2. Upload your files to GitHub:
 
 ```
 git init
 git add .
 git commit -m "first commit"
 git branch -M main
-git remote add origin <Adressen till ditt repo>
+git remote add origin <Your repo address>
 git push -u origin main
 ```
 
-3. Klicka på uppgiften i canvas och ange länken till ditt repo.
-
----
-
 ### :boom: Success!
 
-Efter denna uppgift ska ni kunna använda global state med Redux.
+After completing this assignment, you will be able to manage global state with Redux Toolkit in a Next.js application.
 
----
+### :runner: Extra Tasks
 
-### :runner: Extrauppgifter
+Ready for more? Here are some additional challenges:
 
-Klar? Här är lite mer att göra:
-
-Skapa en till sida med ännu en todolist som använder useReducer. Använd react router för att kunna navigera mellan dom två sidorna.
+Create another page with a new todo list that uses the zustand. Use Next.js routing to navigate between the two pages.
