@@ -17,7 +17,7 @@ Remember to wrap your application with a `Provider` in `_app.js` like this:
 
 ```jsx
 import { Provider } from "react-redux";
-import store from "../store"; // Adjust the path according to your file structure
+import { store } from "../store"; // Adjust the path according to your file structure
 
 function MyApp({ Component, pageProps }) {
   return (
